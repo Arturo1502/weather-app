@@ -4,10 +4,8 @@ import { LocationIcon } from "./Icons";
 
 export default function Sidebar({weatherData,isFahrenheit}) {
     return (
-        <article
-            className="px-4 max-sm:py-[0] bg-blue-1 h-[860px] w-[100%] truncate max-sm:w-full 
-        sm:w-[100%] sm:h-[950px] md:h-screen
-        "
+        <article className="px-4 max-sm:py-[0] bg-blue-1 h-[860px] w-full truncate max-sm:w-full 
+        sm:w-[100%] sm:h-[950px] md:h-screen"
         >
             <div className="flex flex-col items-center relative">
                 <img
@@ -22,7 +20,7 @@ export default function Sidebar({weatherData,isFahrenheit}) {
                 max-sm:pl-[180px]
             sm:w-[850px]"
                 >
-                    {/* bg-transparent */}
+                    
                     <img
                         className="h-auto opacity-10  
                         max-sm:h-[450px]
@@ -33,10 +31,8 @@ export default function Sidebar({weatherData,isFahrenheit}) {
                     />
                 </div>
                 <div
-                    className="absolute mt-5 top-[270px]
-            
-            sm:top-[400px] max-sm:top-[375px]
-            "
+                    className="absolute -mt-8 top-[270px]
+                    sm:top-[350px] max-sm:top-[335px]"
                 >
                     <p className="text-[144px] font-medium">
                         {isFahrenheit

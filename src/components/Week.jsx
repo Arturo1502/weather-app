@@ -3,7 +3,7 @@ import React from "react";
 export default function Week({ keys, forecastData, isFahrenheit }) {
     return (
         <section
-            className="p-12 md:p-0 md:pb-12 grid md:grid-cols-1 grid-cols-2  gap-7 w-full
+            className="p-12 md:p-0 md:pb-9 grid md:grid-cols-1 grid-cols-2  gap-7 w-full
             sm:grid-cols-3 
             lg:grid-cols-3
             xl:grid-cols-5"
