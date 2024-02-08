@@ -26,6 +26,11 @@ export function Search({ inputSearch, cords }) {
         toggleMenu();
     };
 
+    const searchAndClose = (event)=>{
+        search(event);
+        toggleMenu();
+    }
+
     useEffect(() => {
         setPlaces(getPlacesFromLocalStorage());
     }, []);
@@ -54,7 +59,7 @@ export function Search({ inputSearch, cords }) {
                 <button className="flex ml-auto p-4" onClick={toggleMenu}>
                     <ExitIcon />
                 </button>
-                <form className="flex gap-3" onSubmit={search & toggleMenu}>
+                <form className="flex gap-3" onSubmit={searchAndClose}>
                     <div className="flex items-center gap-3 border w-full border-gray-1 pl-3 p-1">
                         <SearchIcon />
                         <input
