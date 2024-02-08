@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { LocationIcon } from "./components/Icons";
 import { Search } from "./components/Search";
 import {
   getForecast,
   getForecastByCords,
   getWeather,
   getWeatherByCords,
-} from "./components/api/fetch";
-import { addPlaceToLocalStorage } from "./utils/storage";
+} from "./components/hooks/fetch";
+import { addPlaceToLocalStorage } from "./components/hooks/storage";
 import "./app.css";
-
-import backGNuves from "/Cloud-background.png";
 import Weak from "./components/Weak";
 import Temp from "./components/Temp";
-import Highlights from "./components/Highligths";
+import Today from "./components/Today";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -136,91 +135,30 @@ function App() {
   }, []);
 
   return (
-    <main className="md:flex max-w-8xl mx-auto w-[100%]">
+    <main className="md:flex max-w-8xl mx-auto w-full h-screen">
       <section className="w-[100%] md:fixed md:top-0 md:bottom-0 md:left-0 md:w-[400px] relative h-[990px]">
         <Search inputSearch={inputSearch} cords={cords} />
 
-        <article
-          className="px-4 max-sm:py-[0] bg-blue-1 h-[860px] w-[100%] truncate max-sm:w-full 
-        sm:w-[100%] sm:h-[950px] md:h-screen
-        "
-        >
-          <div className="flex flex-col items-center relative">
-            <img
-              className="w-36 absolute m-[35px] mt-[70px]
-
-              sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]
-              
-              "
-              src={`/${weatherData.weather}.png`}
-              alt={`/${weatherData.weather}`}
-            />
-            <div
-              className="w-[100%] absolute  max-sm:w-[1200px] 
-                max-sm:pl-[180px]
-            sm:w-[850px]"
-            >
-              {/* bg-transparent */}
-              <img
-                className="h-auto opacity-10  
-                  max-sm:h-[450px]
-                sm:w-[900px] 
-
-                md:w-[650px] md:h-[376px] md:ml-[85px]
-                "
-                src={backGNuves}
-                alt=""
-              />
-            </div>
-            <div
-              className="absolute mt-5 top-[270px]
-            
-            sm:top-[400px] max-sm:top-[375px]
-            "
-            >
-              <p className="text-[144px] font-medium">
-                {isFahrenheit
-                  ? Math.floor(weatherData.temp * (9 / 5) + 32)
-                  : weatherData.temp}
-                <span className="text-gray-2 text-5xl">
-                  {isFahrenheit ? "°F" : "°C"}
-                </span>
-              </p>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="text-gray-2 text-4xl font-semibold pb-12">
-                  {weatherData.weather}
-                </p>
-                <div className="flex gap-4 text-gray-2  text-lg font-medium pb-6">
-                  <span>Today</span>
-                  <span>•</span>
-                  <span>{weatherData.dateFormat}</span>
-                </div>
-                <div className="flex mt-5 gap-3">
-                  <LocationIcon />
-                  <p className="text-gray-2 text-lg font-semibold">
-                    {weatherData.locationName}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
+        <Sidebar
+        weatherData={weatherData}
+        isFahrenheit={isFahrenheit}
+        />
+        
       </section>
 
       <section className="md:flex-1 md:pl-[400px] md:m-20">
+        
         <Temp changeF={changeF} changeC={changeC} />
         <Weak
           keys={keys}
           forecastData={forecastData}
           isFahrenheit={isFahrenheit}
         />
-        <Highlights weatherData={weatherData}
+        <Today weatherData={weatherData}
           isMph={isMph}
         />
-        <footer className="text-sm font-medium text-center p-8 mt-14 ">
-          created by <span className="font-bold">Arturo Alvarez</span> -
-          devChallenges.io
-        </footer>
+        
+        <Footer/>
       </section>
     </main>
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ExitIcon, RightIcon, SearchIcon, SignalIcon } from "./Icons";
-import { getPlacesFromLocalStorage } from "../utils/storage";
+import { getPlacesFromLocalStorage } from "./hooks/storage";
 
 export function Search({ inputSearch, cords }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +59,7 @@ export function Search({ inputSearch, cords }) {
                         <SearchIcon />
                         <input
                             className="bg-transparent w-full py-2 focus:outline-none"
-                            placeholder="Colombia"
+                            placeholder="Arequipa"
                             type="text"
                             value={searchPlace}
                             onChange={(event) => setSearchPlace(event.target.value)}

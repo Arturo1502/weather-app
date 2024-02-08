@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowIcon } from "./Icons";
 
-export default function Highlights({ weatherData, isMph }) {
+export default function Today({ weatherData, isMph }) {
     return (
         <><h3 className="text-2xl font-bold pb-8">Today’s Highlights </h3>
 
