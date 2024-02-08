@@ -8,7 +8,7 @@ import {
 } from "./components/hooks/fetch";
 import { addPlaceToLocalStorage } from "./components/hooks/storage";
 import "./app.css";
-import Weak from "./components/Weak";
+import Week from "./components/Week";
 import Temp from "./components/Temp";
 import Today from "./components/Today";
 import Footer from "./components/Footer";
@@ -149,7 +149,7 @@ function App() {
       <section className="md:flex-1 md:pl-[400px] md:m-20">
         
         <Temp changeF={changeF} changeC={changeC} />
-        <Weak
+        <Week
           keys={keys}
           forecastData={forecastData}
           isFahrenheit={isFahrenheit}

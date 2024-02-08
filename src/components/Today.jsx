@@ -3,7 +3,7 @@ import { ArrowIcon } from "./Icons";
 
 export default function Today({ weatherData, isMph }) {
     return (
-        <><h3 className="text-2xl font-bold pb-8">Today’s Highlights </h3>
+        <><h3 className="text-2xl font-bold pb-6">Today’s Highlights </h3>
 
             <section
                 className="p-2"

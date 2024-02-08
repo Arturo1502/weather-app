@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Weak({ keys, forecastData, isFahrenheit }) {
+export default function Week({ keys, forecastData, isFahrenheit }) {
     return (
         <section
             className="p-12 md:p-0 md:pb-12 grid md:grid-cols-1 grid-cols-2  gap-7 w-full
@@ -18,7 +18,7 @@ export default function Weak({ keys, forecastData, isFahrenheit }) {
                 const weather = forecastData[day].weather;
                 return (
                     <article
-                        className="w-[100%] h-[200px] flex flex-col items-center bg-blue-1 pb-4 pt-5 px-3 m-auto "
+                        className="w-[100%] h-[200px] flex flex-col items-center bg-blue-1 pb-2 pt-5 px-3 m-auto "
                         key={day}
                     >
                         <p className="text-base font-medium pb-3">{day} </p>
