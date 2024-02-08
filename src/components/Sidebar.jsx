@@ -11,11 +11,9 @@ export default function Sidebar({weatherData,isFahrenheit}) {
         >
             <div className="flex flex-col items-center relative">
                 <img
-                    className="w-36 absolute m-[35px] mt-[70px]
-
-              sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]
-              
-              "
+                    className="w-36 absolute m-[35px] mt-[70px]  
+                    sm:w-44 sm:h-44 sm:mt-[120px] max-sm:mt-[160px]
+                    "
                     src={`/${weatherData.weather}.png`}
                     alt={`/${weatherData.weather}`}
                 />
@@ -27,13 +25,11 @@ export default function Sidebar({weatherData,isFahrenheit}) {
                     {/* bg-transparent */}
                     <img
                         className="h-auto opacity-10  
-                  max-sm:h-[450px]
-                sm:w-[900px] 
-
-                md:w-[650px] md:h-[376px] md:ml-[85px]
-                "
+                        max-sm:h-[450px]
+                        sm:w-[900px] 
+                        md:w-[650px] md:h-[376px] md:ml-[85px]"
                         src={bgClouds}
-                        alt=""
+                        alt={`${bgClouds}`}
                     />
                 </div>
                 <div
